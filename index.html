@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>studentlist 4</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cinzel"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- POP UP -->
+    <div id="pop_up">
+      <div id="pop_up_content">
+        <h1>Sorry, but this is not possible</h1>
+        <img
+          src="images/expelled_image.png"
+          alt="Hermione isn't happy"
+          class="expelImage"
+        />
+      </div>
+    </div>
+
+    <!-- MODALVINDUE -->
+    <div class="modal">
+      <div class="modal-content" data-modal="modal-content">
+        <button id="closeModal">Close</button>
+
+        <h2 class="modalTitle" data-modal="modalTitle">
+          <span data-modal="modalFirst"></span>
+          <span data-modal="modalLast"></span>
+        </h2>
+        <img src="" alt="" class="modalImage" data-modal="modalImage" />
+        <p class="modalHouse" data-modal="modalHouse"></p>
+        <p class="bloodstatus" data-modal="bloodstatus">Bloodstatus</p>
+        <p class="bloodstatus" data-modal="inquisitorialSquad">IS</p>
+
+        <p class="studentIS"></p>
+        <img src="" alt="" class="modalHouseImg" data-modal="modalHouseImg" />
+      </div>
+    </div>
+
+    <!-- BILLEDER-->
+    <img
+      id="hogwarts_logo"
+      src="images/hogwarts_logo.png"
+      alt="The Sorting Hat"
+    />
+
+    <div id="top">
+      <h1>Student List - 1991</h1>
+
+      <!-- STUDENTS BY NUMBERS -->
+      <div id="studentCounter">
+        Students of 1991:
+        <div id="hogwartsStudent">Students at hogwarts: XX</div>
+        <div id="gryffindorStudent">Gryffindor-students: XX</div>
+        <div id="hufflepuffStudent">Hufflepuff-students: XX</div>
+        <div id="ravenclawStudent">Ravenclaw-students: XX</div>
+        <div id="slytherinStudent">Slytherin-students: XX</div>
+        <div id="expeltStudent">Currently expelled: XX</div>
+      </div>
+
+      <div id="top_left">
+        <!-- FILTER -->
+        <div id="filter">
+          <span>Filter: </span>
+          <button id="gryffindor">Gryffindor</button>
+          <button id="hufflepuff">Hufflepuff</button>
+          <button id="rawenclaw">Rawenclaw</button>
+          <button id="slytherin">Slytherin</button>
+          <button id="all">All</button>
+        </div>
+
+        <!-- SORTERING -->
+        <div id="sorting">
+          <span>Sort by: </span>
+          <button id="firstName">First Name</button>
+          <button id="lastName">Last Name</button>
+          <button id="house">House</button>
+        </div>
+      </div>
+    </div>
+    <!-- TEMPLATE MED PERSONER -->
+    <section class="list"></section>
+    <template id="persontemplate">
+      <div id="container">
+        <div class="person" data-field="person" data-person>
+          <h2 class="name person_data" data-field="firstName">First Name</h2>
+          <h2 class="name person_data" data-field="lastName">Last Name</h2>
+          <p class="person_data" data-field="house"></p>
+        </div>
+        <div id="container_buttons">
+          <button id="expelButton">Expel this student</button>
+          <button id="appointButton">
+            add to Inquisitorial Squad
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <script src="json.js"></script>
+  </body>
+</html>

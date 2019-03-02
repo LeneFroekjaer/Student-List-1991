@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  overscroll-behavior: none;
+  text-align: center;
+  background-color: white;
+}
+
+/* IMAGES */
+#hogwarts_logo {
+  margin-top: 15px;
+  width: 150px;
+}
+
+.modalImage {
+  width: 100px;
+  margin: 15px auto;
+  display: block;
+}
+
+.modalHouseImg {
+  width: 100px;
+  margin: 15px auto;
+  display: block;
+}
+/* FONTS AND BUTTONS */
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: 3em;
+  margin: 5px;
+}
+
+h2 {
+  font-family: "Tangerine", cursive;
+  font-size: 2em;
+  font-weight: 100;
+}
+
+p {
+  font-family: "Tangerine", cursive;
+  font-size: 2em;
+}
+#appoint p,
+#expel p {
+  font-size: 0.6em;
+  font-family: "Cinzel", serif;
+}
+
+button {
+  background-color: #ffd966;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+button:hover {
+  font-weight: bolder;
+  cursor: pointer;
+}
+#expelButton {
+  padding: 0;
+  margin: 0;
+  background-color: #ff3333;
+}
+#expelButton:hover {
+  background-color: red;
+}
+
+#appointButton {
+  padding: 0;
+  margin: 0;
+  border-top: none;
+  background-color: #208000;
+}
+#appointButton:hover {
+  background-color: #39ac73;
+}
+
+/* PERSONS/ TEMPLATE */
+#container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 10px 0;
+}
+#container_buttons {
+  grid-column: 2/3;
+  align-content: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.person {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: #ffd966;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.person:hover {
+  cursor: pointer;
+}
+
+.person:hover .person_data {
+  font-weight: bolder;
+}
+/* MODAL */
+.modal {
+  margin: 0;
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: 60px auto;
+  width: 75%;
+  max-width: 700px;
+  height: 80%;
+}
+
+#closeModal {
+  margin: 10px auto;
+  background-color: azure;
+  color: blue;
+}
+
+/* HOUSES */
+.gryffindor {
+  background-color: #ce3a0a;
+  color: #fdb02e;
+  border: 1px solid #fdb02e;
+}
+
+.hufflepuff {
+  background-color: #ffc02a;
+  color: #0b0000;
+  border: 1px solid #0b0000;
+}
+
+.ravenclaw {
+  background-color: #395f9d;
+  color: #e9ba36;
+  border: 1px solid #e9ba36;
+}
+
+.slytherin {
+  background-color: #588c39;
+  color: #c0b1c6;
+  border: 1px solid #c0b1c6;
+}
+
+/* POP UP */
+#pop_up {
+  margin: 0;
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#pop_up_content {
+  margin: 60px auto;
+  background-color: whitesmoke;
+  width: 75%;
+  max-width: 700px;
+  height: 80%;
+}
+#pop_up_content h1 {
+  padding: 15px;
+  width: 200px;
+  margin: auto;
+}
+
+/* NUMBERS OF STUDENTS */
+#studentCounter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  border: 1px dotted black;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 0.8em;
+}
+
+@media only screen and (max-width: 700px) {
+  p,
+  h2 {
+    font-size: 1.5em;
+  }
+
+  #filter {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin: 5px 20vw;
+  }
+  #sorting {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin: 0 20vw;
+  }
+  #filter button,
+  #sorting button {
+    margin: 1px;
+  }
+
+  #studentCounter {
+    top: 0;
+    right: 0;
+    display: block;
+    margin: 10px auto;
+    position: relative;
+    padding: 5px;
+    border: 1px dotted black;
+    width: 200px;
+  }
+}
