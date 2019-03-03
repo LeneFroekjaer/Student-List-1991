@@ -38,22 +38,22 @@ let filtered;
 let sorted;
 
 function init() {
-  hentBloodJson();
+  getBloodJson();
 }
 
 //"BLOOD-STATUS" FRA JSON
-function hentBloodJson() {
+function getBloodJson() {
   fetch("http://petlatkea.dk/2019/hogwarts/families.json")
     .then(response => response.json())
     .then(bloodJson => {
       bloodStatus.push(bloodJson);
-      hentJson();
+      getJson();
       return bloodStatus;
     });
 }
 
 //HENTER/LOADER JSON
-function hentJson() {
+function getJson() {
   //Studentlist
   fetch("http://petlatkea.dk/2019/hogwarts/students.json")
     .then(response => response.json())
@@ -89,7 +89,7 @@ function filterHouse() {
     .addEventListener("click", filterHufflepuff);
   document
     .querySelector("#rawenclaw")
-    .addEventListener("click", filterRawenclaw);
+    .addEventListener("click", filterRavenclaw);
   document
     .querySelector("#slytherin")
     .addEventListener("click", filterSlytherin);
@@ -119,7 +119,7 @@ function filterHufflepuff() {
   sortList(filtered);
   filterHouse();
 }
-function filterRawenclaw() {
+function filterRavenclaw() {
   filterType = "Ravenclaw";
   filtered = filterByType(filterType);
   sortList(filtered);
@@ -239,9 +239,10 @@ function showModal(list) {
     list.firstname;
   document.querySelector("[data-modal=modalLast]").textContent = list.lastname;
   document.querySelector("[data-modal=modalHouse]").textContent = list.house;
-  document.querySelector("[data-modal=bloodstatus]").textContent = list.blood;
+  document.querySelector("[data-modal=bloodstatus]").textContent =
+    "Has " + list.blood + "-blood";
   document.querySelector("[data-modal=inquisitorialSquad]").textContent =
-    list.iSquad;
+    "This student is " + list.iSquad + " of Inquisitorial Squad";
   document
     .querySelector("[data-modal=modalHouseImg]")
     .setAttribute("src", "images/" + list.house.toLowerCase() + "_logo.png");
@@ -288,7 +289,7 @@ function expelStudent(list) {
 
 //APPOINT THE STUDENT TO IS
 function appointStudent(event, list) {
-  event.target.style.backgroundColor = "pink";
+  event.target.style.backgroundColor = "green";
   event.target.innerHTML = "remove from inquisitorial Squad";
   list.iSquad = "member";
   setTimeout(timerOnIS, 2000, event, list);
@@ -321,10 +322,10 @@ function countStudent() {
     counts[student.house]++;
   });
 
-  displayCountStudent(counts);
+  displayCount(counts);
 }
 
-function displayCountStudent(counts) {
+function displayCount(counts) {
   document.querySelector("#hogwartsStudent").innerHTML =
     "Students at hogwarts: " + allStudents.length;
   document.querySelector("#gryffindorStudent").innerHTML =
@@ -344,10 +345,10 @@ function displayCountStudent(counts) {
 function addingMyself() {
   const lene = {
     firstname: "Lene",
-    lastname: "Froekjaer",
+    lastname: "Frøkjær",
     house: "Ravenclaw",
     iSquad: "not a member",
-    image: "Froekjaer_L",
+    image: "Frøkjær_L",
     blood: "pure"
   };
   allStudents.push(lene);

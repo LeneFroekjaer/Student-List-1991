@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>studentlist 4</title>
+    <title>studentlist 1991</title>
     <link rel="stylesheet" href="style.css" />
     <!-- FONTS -->
     <link
@@ -73,19 +73,23 @@
         <!-- FILTER -->
         <div id="filter">
           <span>Filter: </span>
-          <button id="gryffindor">Gryffindor</button>
-          <button id="hufflepuff">Hufflepuff</button>
-          <button id="rawenclaw">Rawenclaw</button>
-          <button id="slytherin">Slytherin</button>
-          <button id="all">All</button>
+          <div class="dropdown_menu">
+            <button id="gryffindor">Gryffindor</button>
+            <button id="hufflepuff">Hufflepuff</button>
+            <button id="rawenclaw">Rawenclaw</button>
+            <button id="slytherin">Slytherin</button>
+            <button id="all">All</button>
+          </div>
         </div>
 
         <!-- SORTERING -->
         <div id="sorting">
           <span>Sort by: </span>
-          <button id="firstName">First Name</button>
-          <button id="lastName">Last Name</button>
-          <button id="house">House</button>
+          <div class="dropdown_menu">
+            <button id="firstName">First Name</button>
+            <button id="lastName">Last Name</button>
+            <button id="house">House</button>
+          </div>
         </div>
       </div>
     </div>
@@ -96,7 +100,7 @@
         <div class="person" data-field="person" data-person>
           <h2 class="name person_data" data-field="firstName">First Name</h2>
           <h2 class="name person_data" data-field="lastName">Last Name</h2>
-          <p class="person_data" data-field="house"></p>
+          <h2 class="person_data" data-field="house"></h2>
         </div>
         <div id="container_buttons">
           <button id="expelButton">Expel this student</button>
