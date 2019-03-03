@@ -23,6 +23,10 @@ body {
   margin: 15px auto;
   display: block;
 }
+
+#pop_up_content img {
+  width: 200px;
+}
 /* FONTS AND BUTTONS */
 h1 {
   font-family: "Cinzel", serif;
